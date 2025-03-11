@@ -1,0 +1,80 @@
+ProductName,RecipeType,id,QtyProduced,ProcessingCost,ingredient1id,ingredient1Qty,ingredient2id,ingredient2Qty,ingredient3id,ingredient3Qty
+Prayer potion(4),Decant 3 to 4 (Bob Barter),2434,1,0,139,1.333,null,0,null,0
+Stamina potion(4),Decant 3 to 4 (Bob Barter),12625,1,0,12627,1.333,null,0,null,0
+Ranging potion(4),Decant 3 to 4 (Bob Barter),2444,1,0,169,1.333,null,0,null,0
+Energy potion(4),Decant 3 to 4 (Bob Barter),3008,1,0,3010,1.333,null,0,null,0
+Magic potion(4),Decant 3 to 4 (Bob Barter),3040,1,0,3042,1.333,null,0,null,0
+Antifire potion(4),Decant 3 to 4 (Bob Barter),2452,1,0,2454,1.333,null,0,null,0
+Combat potion(4),Decant 3 to 4 (Bob Barter),9739,1,0,9741,1.333,null,0,null,0
+Bastion potion(4),Decant 3 to 4 (Bob Barter),22461,1,0,22464,1.333,null,0,null,0
+Saradomin brew(4),Decant 3 to 4 (Bob Barter),6685,1,0,6687,1.333,null,0,null,0
+Super restore(4),Decant 3 to 4 (Bob Barter),3024,1,0,3026,1.333,null,0,null,0
+Super energy(4),Decant 3 to 4 (Bob Barter),3016,1,0,3018,1.333,null,0,null,0
+Super strength(4),Decant 3 to 4 (Bob Barter),2440,1,0,157,1.333,null,0,null,0
+Super attack(4),Decant 3 to 4 (Bob Barter),2436,1,0,145,1.333,null,0,null,0
+Super defence(4),Decant 3 to 4 (Bob Barter),2442,1,0,163,1.333,null,0,null,0
+Ancient brew(4),Decant 3 to 4 (Bob Barter),26340,1,0,26342,1.333,null,0,null,0
+Stamina potion(1),Decant 4 to 1 (Bob Barter),12631,4,24,12625,1,null,0,null,0
+Divine super combat potion(1),Decant 4 to 1 (Bob Barter),23694,4,24,23685,1,null,0,null,0
+Divine ranging potion(1),Decant 4 to 1 (Bob Barter),23742,4,24,23733,1,null,0,null,0
+Super combat potion(1),Decant 4 to 1 (Bob Barter),12701,4,24,12695,1,null,0,null,0
+Ranarr potion (unf) ,Create Unfinished Potions (Zahur),99,1,200,257,1,227,1,null,0
+Toadflax potion (unf),Create Unfinished Potions (Zahur),3002,1,200,2998,1,227,1,null,0
+Avantoe potion (unf),Create Unfinished Potions (Zahur),103,1,200,261,1,227,1,null,0
+Snapdragon potion (unf),Create Unfinished Potions (Zahur),3004,1,200,3000,1,227,1,null,0
+Irit potion (unf),Create Unfinished Potions (Zahur),101,1,200,259,1,227,1,null,0
+Dwarf weed potion (unf),Create Unfinished Potions (Zahur),109,1,200,267,1,227,1,null,0
+Cadantine potion (unf),Create Unfinished Potions (Zahur),107,1,200,265,1,227,1,null,0
+Lantadyme potion (unf),Create Unfinished Potions (Zahur),2483,1,200,2481,1,227,1,null,0
+Kwuarm potion (unf),Create Unfinished Potions (Zahur),105,1,200,263,1,227,1,null,0
+Harralander potion (unf),Create Unfinished Potions (Zahur),97,1,200,255,1,227,1,null,0
+Tarromin potion (unf),Create Unfinished Potions (Zahur),95,1,200,253,1,227,1,null,0
+Guam potion (unf),Create Unfinished Potions (Zahur),91,1,200,249,1,227,1,null,0
+Torstol potion (unf),Create Unfinished Potions (Zahur),111,1,200,269,1,227,1,null,0
+Marrentill potion (unf),Create Unfinished Potions (Zahur),93,1,200,251,1,227,1,null,0
+Cadantine blood potion (unf),Create Unfinished Blood Potions (Zahur),22443,1,200,265,1,22446,1,null,0
+Nihil Dust,Crushing Nihil Shards (Wesley),26368,1,50,26231,1,null,0,null,0
+Crushed nest,Crushing Bird Nests (Wesley),6693,1,50,5075,1,null,0,null,0
+Kebbit Teeth Dust,Crushing Kebbit Teeth (Wesley),10111,1,50,10109,1,null,0,null,0
+Dragon scale dust,Crushing Dragon Scales (Wesley),241,1,50,243,1,null,0,null,0
+Unicorn horn dust,Crushing Unicorn Horns (Wesley),235,1,50,237,1,null,0,null,0
+Goat horn dust,Crushing Goat Horns (Wesley),9736,1,50,9735,1,null,0,null,0
+Karil’s leathertop,Repair Broken Armour (POH calculated at 80 smithing),4736,1,54000,4944,1,null,0,null,0
+Ahrim’s robetop,Repair Broken Armour (POH calculated at 80 smithing),4712,1,54000,4872,1,null,0,null,0
+Torag’s platebody,Repair Broken Armour (POH calculated at 80 smithing),4749,1,54000,4968,1,null,0,null,0
+Dharok’s platebody,Repair Broken Armour (POH calculated at 80 smithing),4720,1,54000,4896,1,null,0,null,0
+Guthan’s platebody,Repair Broken Armour (POH calculated at 80 smithing),4728,1,54000,4920,1,null,0,null,0
+Verac’s brassard,Repair Broken Armour (POH calculated at 80 smithing),4757,1,54000,4992,1,null,0,null,0
+Karil’s coif,Repair Broken Armour (POH calculated at 80 smithing),4732,1,36000,4932,1,null,0,null,0
+Ahrim’s hood,Repair Broken Armour (POH calculated at 80 smithing),4708,1,36000,4860,1,null,0,null,0
+Torag’s helm,Repair Broken Armour (POH calculated at 80 smithing),4745,1,36000,4956,1,null,0,null,0
+Dharok’s helm,Repair Broken Armour (POH calculated at 80 smithing),4716,1,36000,4884,1,null,0,null,0
+Guthan’s helm,Repair Broken Armour (POH calculated at 80 smithing),4724,1,36000,4908,1,null,0,null,0
+Verac’s helm,Repair Broken Armour (POH calculated at 80 smithing),4753,1,36000,4980,1,null,0,null,0
+Karil’s leatherskirt,Repair Broken Armour (POH calculated at 80 smithing),4738,1,48000,4950,1,null,0,null,0
+Ahrim’s robeskirt,Repair Broken Armour (POH calculated at 80 smithing),4714,1,48000,4878,1,null,0,null,0
+Torag’s platelegs,Repair Broken Armour (POH calculated at 80 smithing),4751,1,48000,4974,1,null,0,null,0
+Dharok’s platelegs,Repair Broken Armour (POH calculated at 80 smithing),4722,1,48000,4902,1,null,0,null,0
+Guthan’s chainskirt,Repair Broken Armour (POH calculated at 80 smithing),4730,1,48000,4926,1,null,0,null,0
+Verac’s plateskirt,Repair Broken Armour (POH calculated at 80 smithing),4759,1,48000,4998,1,null,0,null,0
+Karil’s crossbow,Repair Broken Weapon (POH calculated at 80 smithing),4734,1,60000,4938,1,null,0,null,0
+Ahrim’s staff,Repair Broken Weapon (POH calculated at 80 smithing),4710,1,60000,4866,1,null,0,null,0
+Torag’s hammers,Repair Broken Weapon (POH calculated at 80 smithing),4747,1,60000,4962,1,null,0,null,0
+Dharok’s greataxe,Repair Broken Weapon (POH calculated at 80 smithing),4718,1,60000,4890,1,null,0,null,0
+Guthan’s warspear,Repair Broken Weapon (POH calculated at 80 smithing),4726,1,60000,4914,1,null,0,null,0
+Verac’s flail,Repair Broken Weapon (POH calculated at 80 smithing),4755,1,60000,4986,1,null,0,null,0
+Voidwaker,"Take Voidwaker Hilt, Blade, Gem and 500K GP to Madam Sikaro",27690,1,500000,27687,1,27684,1,27681,1
+Ancient godsword,Combine hilt and godsword blade,26233,1,0,11798,1,26370,1,,0
+Armadyl godsword,Combine hilt and godsword blade,11802,1,0,11798,1,11810,1,,0
+Bandos godsword,Combine hilt and godsword blade,11804,1,0,11798,1,11812,1,,0
+Saradomin godsword,Combine hilt and godsword blade,11806,1,0,11798,1,11814,1,,0
+Zamorak godsword,Combine hilt and godsword blade,11808,1,0,11798,1,11816,1,,0
+Torva full helm,Use Broken Armour and 1 Bandosian Component on Anvil (90 smithing),26382,1,0,26376,1,11834,0.5,null,0
+Torva platebody,Use Broken Armour and 2 Bandosian Components on Anvil (90 smithing),26384,1,0,26378,1,11834,1,null,0
+Torva platelegs,Use Broken Armour and 2 Bandosian Components on Anvil (90 smithing),26386,1,0,26380,1,11834,1,null,0
+Dragon hunter lance,Combine Hydra Claw with Zamorakian Hasta,22978,1,0,22966,1,11889,1,null,0
+Guardian boots,Combine Bandos Boots with Black tourmaline core,21733,1,0,21730,1,11836,1,null,0
+Dragonfire shield,Use Anti-dragon shield and Draconic Visage on Anvil (90 smithing),11284,1,0,11286,1,1540,1,null,0
+Kodai wand,Combine Master Wand with Kodai insignia,21006,1,0,21043,1,6914,1,null,0
+Black mask,Uncharge Black mask (10),8921,1,0,8901,1,null,0,null,0
+Venator bow (uncharged),Combine 5 Venator shards,27612,1,0,27614,5,null,0,null,0
