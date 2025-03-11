@@ -3,16 +3,14 @@ import pandas as pd
 conn = sqlite3.connect('osrsmarketdata.sqlite')
 cur = conn.cursor()
 
-typeids = (4151, 5678, 9012)
+typeids = (1, 4151)
 cur.execute("SELECT timestamp, typeid, avgHighPrice, highPriceVolume, avgLowPrice, lowPriceVolume "
             "FROM marketdata "
             "WHERE interval = ? AND typeid IN ({})".format(','.join(['?'] * len(typeids))),
-            (300,) + tuple(typeids))
+            (86400,) + tuple(typeids))
 
 
 data = cur.fetchall()
 df = pd.DataFrame(data, columns=['timestamp', 'typeid', 'avgHighPrice', 'highPriceVolume', 'avgLowPrice', 'lowPriceVolume'])
-'''
-df['timestamp'] = pd.to_datetime(df['timestamp'], unit='s')
-df.set_index('timestamp', inplace=True)'''
+
 print(df)
