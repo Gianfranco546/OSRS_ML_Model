@@ -8,14 +8,14 @@
 headers = {'User-Agent': 'Data collection for ML training - gianfrancoameri2002@gmail.com',}
 
 ## sleepdur sets our sleep interval (in seconds) between API calls (the OSRS Wiki API permits up-to 1 call per second)
-sleepdur = 4
+sleepdur = 2
 
 ## By default, 'LowEffortRecipes.csv' must be located in the same directory as the script before execution. If you aren't interested in importing this table, set the following value to 0:
 UseRecipeTable = 1
 
 ## define desired market data endpoints, their corresponding interval length (in seconds), and retention threshold (in days). 
 # The retention threshold for each endpoint can be increased/decreased as you wish. The default settings will generate ~350MB of market data.
-endpoints = [['5m/', 300, 2], ['1h/', 3600, 30], ['24h/', 86400, 365]]
+endpoints = [['5m/', 300, 2], ['1h/', 3600, 30], ['6h/', 21600, 365], ['24h/', 86400, 365]]
 
 ## this script supports multiprocessing for report generation. cpucount specifies the number of processes to spawn for executing the ReportGenWorker function against all typeids
 cpucount = 1
