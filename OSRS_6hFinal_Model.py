@@ -221,7 +221,7 @@ num_layers = 6
 dropout = 0.1
 output_dim = 16
 
-batch_size = 8
+batch_size = 32
 num_workers = 4
 epochs = 7
 
