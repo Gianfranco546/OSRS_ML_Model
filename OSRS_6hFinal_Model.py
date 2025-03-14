@@ -95,9 +95,9 @@ class OSRSMarketDataset(Dataset):
                 vol_mean = vol_features.mean()
                 vol_std = vol_features.std()
                 if price_std == 0:
-                    price_std = 1
+                    price_std = 1000
                 if vol_std == 0:
-                    vol_std = 1                
+                    vol_std = 1000                
                 sequence =     np.column_stack((
         (features[:, :2] - price_mean) / price_std,  # Apply same scaling to both columns
         (features[:, 2:] - vol_mean) / vol_std       # Apply volume scaling as before
@@ -256,6 +256,7 @@ wandb.init(project="OSRS_PricePredictor_Model")
 
 for epoch in range(epochs):
     running_loss = 0
+    train_skipped = 0
     model.train()
     train_progress = tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs} [Train]", leave=False)
     for batch in train_progress:
@@ -268,18 +269,26 @@ for epoch in range(epochs):
         y_flat = y.reshape(-1, 16)  # (batch_size, 8)
         pred = model(x)
         loss = criterion(pred, y_flat)
+        
+        if loss.item() > 100:
+            train_skipped += 1
+            train_progress.set_postfix({'loss': f"{loss.item():.4f}"})
+            continue       
+        
         optimizer.zero_grad()
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         optimizer.step()
         
         running_loss += loss.item()
         wandb.log({"train_loss": loss.item()})
         train_progress.set_postfix({'loss': f"{loss.item():.4f}"})
-    train_loss = running_loss / len_train
+    train_loss = running_loss / (len_train - train_skipped)
     
     # Validation Loop
     model.eval()  # Set model to evaluation mode (disables dropout, batchnorm, etc.)
     val_loss = 0.0
+    val_skipped = 0
     val_progress = tqdm(val_loader, desc=f"Epoch {epoch+1}/{epochs} [Val]", leave=False)
     with torch.no_grad():  # No gradient updates for validation
         for batch in val_progress:
@@ -292,17 +301,20 @@ for epoch in range(epochs):
             y_flat = y.reshape(-1, 16)  # (batch_size, 8)
             pred = model(x)
             loss = criterion(pred, y_flat)
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
+            
+            if loss.item() > 100:
+                val_skipped += 1
+                val_progress.set_postfix({'loss': f"{loss.item():.4f}"})
+                continue              
             
             val_loss += loss.item()
             wandb.log({"val_loss": loss.item()})
             # Update validation progress bar
             val_progress.set_postfix({'val_loss': f"{loss.item():.4f}"})
-    val_loss /= len_val
+    val_loss /= (len_val - val_skipped)
     wandb.log({"epoch": epoch + 1, "train_loss": train_loss, "val_loss": val_loss})
     print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
+    print(f"Epoch {epoch+1} | Train Skipped: {train_skipped} | Val Loss: {val_skipped}")
     model_filename = f"OSRS_PricePredictor_epoch_{epoch+1}.pth"
     torch.save(model.state_dict(), model_filename)
 
