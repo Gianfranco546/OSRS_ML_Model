@@ -242,8 +242,8 @@ num_layers = 6
 dropout = 0.1
 output_dim = 16
 
-batch_size = 1  #32
-num_workers = 0  #4
+batch_size = 32  #32
+num_workers = 4  #4
 epochs = 7
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
