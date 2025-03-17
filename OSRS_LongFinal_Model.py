@@ -148,7 +148,7 @@ class OSRSMarketDataset(Dataset):
                 
             buylimit = buylimit_row[0]
             if buylimit != None:
-                if (buylimit * recent_low_price) <= 1_000_000:
+                if (buylimit * recent_low_price) <= 100_000:
                     continue
 
             # Create sequences for this item
@@ -238,7 +238,7 @@ input_dim = 4
 d_model = 512
 num_heads = 8
 d_ff = 2048
-num_layers = 6
+num_layers = 12
 dropout = 0.1
 output_dim = 16
 
