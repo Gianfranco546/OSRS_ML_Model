@@ -330,7 +330,6 @@ for epoch in range(epochs):
                 continue              
             
             val_loss += loss.item()
-            wandb.log({"val_loss": loss.item()})
             # Update validation progress bar
             val_progress.set_postfix({'val_loss': f"{loss.item():.4f}"})
     val_loss /= (len_val - val_skipped)
