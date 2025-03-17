@@ -7,12 +7,13 @@ def get_item_name(typeid):
         # Create a cursor
         cur = conn.cursor()
         # Query the mapping table for the name corresponding to the typeid
-        cur.execute("SELECT name FROM Mapping WHERE typeid = ?", (typeid,))
+        cur.execute("SELECT name, buylimit FROM Mapping WHERE typeid = ?", (typeid,))
         # Fetch the result
         result = cur.fetchone()
         # Close the connection
         conn.close()
         if result:
+            print(result[1])
             return result[0]
         else:
             return None
@@ -53,7 +54,7 @@ else:
         print("No item found with name", name_input)
         
 # Get typeid from user input
-typeid_input = 23336
+typeid_input = 29993
 try:
     typeid = int(typeid_input)
 except ValueError:

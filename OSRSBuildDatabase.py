@@ -15,7 +15,8 @@ UseRecipeTable = 1
 
 ## define desired market data endpoints, their corresponding interval length (in seconds), and retention threshold (in days). 
 # The retention threshold for each endpoint can be increased/decreased as you wish. The default settings will generate ~350MB of market data.
-endpoints = [['5m/', 300, 2], ['1h/', 3600, 30], ['6h/', 21600, 365], ['24h/', 86400, 365]]
+endpoints = [#['5m/', 300, 2], ['1h/', 3600, 30], 
+             ['6h/', 21600, 365], ['24h/', 86400, 1095]]
 
 ## this script supports multiprocessing for report generation. cpucount specifies the number of processes to spawn for executing the ReportGenWorker function against all typeids
 cpucount = 1
