@@ -299,7 +299,7 @@ for epoch in range(epochs):
         
         optimizer.zero_grad()
         loss.backward()
-        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+        #torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         optimizer.step()
         
         running_loss += loss.item()
