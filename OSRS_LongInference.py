@@ -103,7 +103,7 @@ def analyze_market():
     model = TransformerModel(input_dim=input_dim, d_model=d_model, num_heads=num_heads, 
                             d_ff=d_ff, num_layers=num_layers, dropout=dropout, 
                             output_dim=output_dim).to(device)
-    model.load_state_dict(torch.load("OSRS_PricePredictor_epoch_4.pth"))
+    model.load_state_dict(torch.load("OSRS_PricePredictorLong_epoch_4.pth"))
     model.eval()
 
     conn = sqlite3.connect('osrsmarketdata.sqlite')
