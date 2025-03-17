@@ -336,8 +336,8 @@ for epoch in range(epochs):
     wandb.log({"epoch": epoch + 1, "train_epoch_loss": train_loss, "val_epoch_loss": val_loss})
     print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
     print(f"Epoch {epoch+1} | Train Skipped: {train_skipped} | Val Loss: {val_skipped}")
-    model_filename = f"OSRS_PricePredictor_epoch_{epoch+1}.pth"
+    model_filename = f"OSRS_PricePredictorLong_epoch_{epoch+1}.pth"
     torch.save(model.state_dict(), model_filename)
 
-torch.save(model.state_dict(), "OSRS_PricePredictor.pth")
+torch.save(model.state_dict(), "OSRS_PricePredictorLong.pth")
 wandb.finish()
