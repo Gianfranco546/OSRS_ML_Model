@@ -233,11 +233,11 @@ dataset = OSRSMarketDataset()
 train_size = int(0.95 * len(dataset))
 val_size = len(dataset) - train_size
 train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
-len_train = len(train_dataset)
-len_val = len(val_dataset)
 
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
 val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers)
+len_train = len(train_loader)
+len_val = len(val_loader)
 
 model = TransformerModel(
     input_dim = input_dim,
@@ -312,7 +312,7 @@ for epoch in range(epochs):
             # Update validation progress bar
             val_progress.set_postfix({'val_loss': f"{loss.item():.4f}"})
     val_loss /= (len_val - val_skipped)
-    wandb.log({"epoch": epoch + 1, "train_loss": train_loss, "val_loss": val_loss})
+    wandb.log({"epoch": epoch + 1, "train_epoch_loss": train_loss, "val_epoch_loss": val_loss})
     print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
     print(f"Epoch {epoch+1} | Train Skipped: {train_skipped} | Val Loss: {val_skipped}")
     model_filename = f"OSRS_PricePredictor_epoch_{epoch+1}.pth"
