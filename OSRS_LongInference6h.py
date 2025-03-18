@@ -17,7 +17,7 @@ input_dim = 4
 d_model = 512
 num_heads = 8
 d_ff = 2048
-num_layers = 12
+num_layers = 8
 dropout = 0.1
 output_dim = 16
 
@@ -29,7 +29,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
 class PositionalEncoding(nn.Module):
-    def __init__(self, d_model, max_len=130):
+    def __init__(self, d_model, max_len=500):
         super().__init__()
         pe = torch.zeros(max_len, d_model)
         position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
@@ -103,7 +103,7 @@ def analyze_market():
     model = TransformerModel(input_dim=input_dim, d_model=d_model, num_heads=num_heads, 
                             d_ff=d_ff, num_layers=num_layers, dropout=dropout, 
                             output_dim=output_dim).to(device)
-    model.load_state_dict(torch.load("OSRS_PricePredictorLong1_epoch_3.pth"))
+    model.load_state_dict(torch.load("OSRS_PricePredictorLong6hMSE_epoch_1.pth"))
     model.eval()
 
     conn = sqlite3.connect('osrsmarketdata.sqlite')
@@ -111,10 +111,10 @@ def analyze_market():
 
     # Get all item IDs with recent data
     cur.execute("""SELECT DISTINCT typeid FROM marketdata 
-                WHERE interval=86400 
-                AND timestamp >= (SELECT MAX(timestamp)-86400*128 
+                WHERE interval=21600 
+                AND timestamp >= (SELECT MAX(timestamp)-21600*488 
                                 FROM marketdata 
-                                WHERE interval=86400)""")
+                                WHERE interval=21600)""")
     item_ids = [row[0] for row in cur.fetchall()]
 
     results = []
@@ -124,13 +124,13 @@ def analyze_market():
         cur.execute("""SELECT timestamp, avgHighPrice, highPriceVolume, 
                       avgLowPrice, lowPriceVolume 
                       FROM marketdata 
-                      WHERE typeid=? AND interval=86400 
+                      WHERE typeid=? AND interval=21600 
                       ORDER BY timestamp DESC 
-                      LIMIT 128""", (typeid,))
+                      LIMIT 488""", (typeid,))
         data = cur.fetchall()[::-1]  # Reverse to chronological order
 
         # Skip items with insufficient data
-        if len(data) < 128:
+        if len(data) < 488:
             continue
 
         # Forward fill and process sequence
@@ -176,14 +176,14 @@ def analyze_market():
         low_prices = seq[:, 1]
         
         # Get normalization parameters from first 120 steps
-        price_mean = np.mean(np.log(high_prices[1:121]/high_prices[:120]))
-        price_std = np.std(np.log(high_prices[1:121]/high_prices[:120]))
-        vol_mean = np.mean(np.log1p(seq[:120, 2]))
-        vol_std = np.std(np.log1p(seq[:120, 2]))
+        price_mean = np.mean(np.log(high_prices[1:481]/high_prices[:480]))
+        price_std = np.std(np.log(high_prices[1:481]/high_prices[:480]))
+        vol_mean = np.mean(np.log1p(seq[:480, 2]))
+        vol_std = np.std(np.log1p(seq[:480, 2]))
 
         # Create input sequence
         input_seq = []
-        for i in range(120, 128):
+        for i in range(480, 488):
             high_return = np.log(high_prices[i]/high_prices[i-1])
             low_return = np.log(low_prices[i]/low_prices[i-1])
             hvol = np.log1p(seq[i, 2])
