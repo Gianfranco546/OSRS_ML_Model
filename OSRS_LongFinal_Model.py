@@ -260,7 +260,7 @@ val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_w
 len_train = len(train_loader)
 len_val = len(val_loader)
 
-model = TransformerModel(
+model = TransformerModel( 
     input_dim = input_dim,
     d_model = d_model,
     num_heads = num_heads,
