@@ -176,3 +176,4 @@ logfile.txt
 wandb/
 OSRS_PricePredictor_epoch_4.pth
 OSRS_PricePredictorLong_epoch_4.pth
+OSRS_PricePredictorLong1_epoch_3.pth

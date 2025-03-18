@@ -17,7 +17,7 @@ input_dim = 4
 d_model = 512
 num_heads = 8
 d_ff = 2048
-num_layers = 6
+num_layers = 12
 dropout = 0.1
 output_dim = 16
 
@@ -103,7 +103,7 @@ def analyze_market():
     model = TransformerModel(input_dim=input_dim, d_model=d_model, num_heads=num_heads, 
                             d_ff=d_ff, num_layers=num_layers, dropout=dropout, 
                             output_dim=output_dim).to(device)
-    model.load_state_dict(torch.load("OSRS_PricePredictorLong_epoch_4.pth"))
+    model.load_state_dict(torch.load("OSRS_PricePredictorLong1_epoch_3.pth"))
     model.eval()
 
     conn = sqlite3.connect('osrsmarketdata.sqlite')
