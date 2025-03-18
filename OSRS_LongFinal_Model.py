@@ -270,8 +270,8 @@ model = TransformerModel(
     output_dim = output_dim
 ).to(device)
 
-criterion = nn.MSELoss()  # Now compares 4 output values vs 4 targets
-#criterion = nn.HuberLoss(delta=1.35)
+#criterion = nn.MSELoss()  # Now compares 4 output values vs 4 targets
+criterion = nn.HuberLoss(delta=1.35)
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
 
 wandb.init(project="OSRS_PricePredictor_Model")
@@ -336,8 +336,8 @@ for epoch in range(epochs):
     wandb.log({"epoch": epoch + 1, "train_epoch_loss": train_loss, "val_epoch_loss": val_loss})
     print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
     print(f"Epoch {epoch+1} | Train Skipped: {train_skipped} | Val Loss: {val_skipped}")
-    model_filename = f"OSRS_PricePredictorLongMSE_epoch_{epoch+1}.pth"
+    model_filename = f"OSRS_PricePredictorLong1_epoch_{epoch+1}.pth"
     torch.save(model.state_dict(), model_filename)
 
-torch.save(model.state_dict(), "OSRS_PricePredictorLongMSE.pth")
+torch.save(model.state_dict(), "OSRS_PricePredictorLong1.pth")
 wandb.finish()
