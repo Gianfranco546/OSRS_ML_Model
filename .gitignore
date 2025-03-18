@@ -174,3 +174,5 @@ cython_debug/
 osrsmarketdata.sqlite
 logfile.txt
 wandb/
+OSRS_PricePredictor_epoch_4.pth
+OSRS_PricePredictorLong_epoch_4.pth
