@@ -1,4 +1,9 @@
-numpy
-torch
 tqdm
 wandb
+pandas
+matplotlib
+statsmodels
+pmdarima
+scikit-learn
+torch
+numpy
