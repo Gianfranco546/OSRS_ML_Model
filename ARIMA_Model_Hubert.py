@@ -209,8 +209,8 @@ for sample in val_dataset:
     # Forecast the next 8 data points.
     forecast = model_fit.forecast(steps=8)
     
-    # Convert forecast and test data to torch tensors.
-    forecast_tensor = torch.tensor(forecast, dtype=torch.float32)
+    # Convert forecast (a Pandas Series) and test data to torch tensors.
+    forecast_tensor = torch.tensor(forecast.to_numpy(), dtype=torch.float32)
     test_data_tensor = torch.tensor(test_data, dtype=torch.float32)
     
     # Calculate HuberLoss with delta = 1.35.
