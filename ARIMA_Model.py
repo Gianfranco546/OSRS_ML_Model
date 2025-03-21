@@ -167,8 +167,10 @@ class OSRSMarketDataset(Dataset):
     
     def __getitem__(self, idx):
         return torch.from_numpy(self.all_sequences[idx]).float()
-
+print("Start Loading")
 dataset = OSRSMarketDataset()
+datset = dataset[:100]
+print("Small")
 train_size = int(0.95 * len(dataset))
 val_size = len(dataset) - train_size
 train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
