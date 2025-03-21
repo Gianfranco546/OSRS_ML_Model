@@ -1,11 +1,9 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 import pmdarima as pm
 from sklearn.metrics import mean_squared_error
 import random
 import torch
-import torch.nn as nn
 import numpy as np
 import sqlite3
 from collections import defaultdict
@@ -169,8 +167,6 @@ class OSRSMarketDataset(Dataset):
         return torch.from_numpy(self.all_sequences[idx]).float()
 print("Start Loading")
 dataset = OSRSMarketDataset()
-datset = dataset[:100]
-print("Small")
 train_size = int(0.95 * len(dataset))
 val_size = len(dataset) - train_size
 train_dataset, val_dataset = random_split(dataset, [train_size, val_size])

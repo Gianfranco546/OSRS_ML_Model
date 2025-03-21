@@ -1,7 +1,6 @@
 tqdm
 wandb
 pandas
-matplotlib
 statsmodels
 pmdarima
 scikit-learn
