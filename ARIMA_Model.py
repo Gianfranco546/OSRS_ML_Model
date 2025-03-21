@@ -180,7 +180,8 @@ for sample in val_dataset:
     count += 1
     print("Sample", count)
     # Convert the torch tensor to a NumPy array.
-    data_np = sample.numpy()
+    sample1 = sample[:, 0]
+    data_np = sample1.numpy()
     
     # Split into training (first 480 points) and test data (last 8 points).
     train_data = data_np[:480]
