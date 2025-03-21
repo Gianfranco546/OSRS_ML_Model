@@ -210,6 +210,7 @@ for sample in val_dataset:
     # Calculate the Mean Squared Error between the forecast and the actual test data.
     mse = mean_squared_error(test_data, forecast)
     mse_list.append(mse)
+    print("Mean:", np.mean(mse_list))
 
 # Calculate and print the average MSE over the entire dataset.
 avg_mse = np.mean(mse_list)
