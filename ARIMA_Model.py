@@ -8,6 +8,8 @@ import numpy as np
 import sqlite3
 from collections import defaultdict
 from torch.utils.data import random_split, Dataset
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 random.seed(42)
 torch.manual_seed(42)
 torch.cuda.manual_seed_all(42)
