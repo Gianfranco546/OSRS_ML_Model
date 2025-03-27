@@ -43,7 +43,7 @@ def get_item_id(name):
         return None
 
 # Get item name from user input
-name_input = "Soulreaper axe".strip()
+name_input = "Prayer potion(4)".strip()
 if not name_input:
     print("Please enter a valid item name.")
 else:
@@ -54,7 +54,7 @@ else:
         print("No item found with name", name_input)
         
 # Get typeid from user input
-typeid_input = 29993
+typeid_input = 2434
 try:
     typeid = int(typeid_input)
 except ValueError:
